@@ -25,7 +25,6 @@ OTHER_FILES += \
     appicons/172x172/apps/harbour-jollaopas.png \
     appicons/256x256/apps/harbour-jollaopas.png
 
-
 appicons.files = appicons/*
 appicons.path = /usr/share/icons/hicolor
 
@@ -99,7 +98,6 @@ SOURCES += src/main.cpp \
 
 INCLUDEPATH += \
     src 
-
 
 include(version.pri)
 include(common.pri)

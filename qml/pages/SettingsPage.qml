@@ -48,31 +48,31 @@ Page {
         Component.onCompleted: {
             Storage.initialize()
             var setting = Storage.getSetting("api")
-            currentApi.set_value(setting == "Unknown"?"helsinki" : setting)
+            currentApi.set_value(setting == "Unknown" ? "helsinki" : setting)
             setting = Storage.getSetting("tram_disabled")
-            tramSwitch.set_value(setting == "Unknown"?"false" : setting)
+            tramSwitch.set_value(setting == "Unknown" ? "false" : setting)
             setting = Storage.getSetting("bus_disabled")
-            busSwitch.set_value(setting == "Unknown"?"false" : setting)
+            busSwitch.set_value(setting == "Unknown" ? "false" : setting)
             setting = Storage.getSetting("ferry_disabled")
-            ferrySwitch.set_value(setting == "Unknown"?"false" : setting)
+            ferrySwitch.set_value(setting == "Unknown" ? "false" : setting)
             setting = Storage.getSetting("metro_disabled")
-            metroSwitch.set_value(setting == "Unknown"?"false" : setting)
+            metroSwitch.set_value(setting == "Unknown" ? "false" : setting)
             setting = Storage.getSetting("train_disabled")
-            trainSwitch.set_value(setting == "Unknown"?"false" : setting)
+            trainSwitch.set_value(setting == "Unknown" ? "false" : setting)
             setting = Storage.getSetting("walking_speed")
-            walkingSpeed.set_value(setting == "Unknown"?"70" : setting)
+            walkingSpeed.set_value(setting == "Unknown" ? "70" : setting)
             setting = Storage.getSetting("change_margin")
-            changeMargin.set_value(setting == "Unknown"?"3" : Math.floor(setting))
+            changeMargin.set_value(setting == "Unknown" ? "3" : Math.floor(setting))
             setting = Storage.getSetting("change_reluctance")
-            changeReluctance.set_value(setting == "Unknown"?"10" : Math.floor(setting))
+            changeReluctance.set_value(setting == "Unknown" ? "10" : Math.floor(setting))
             setting = Storage.getSetting("walk_reluctance")
-            walkReluctance.set_value(setting == "Unknown"?"2" : Math.floor(setting))
+            walkReluctance.set_value(setting == "Unknown" ? "2" : Math.floor(setting))
             setting = Storage.getSetting("search_interval")
             searchInterval.set_value(setting == "Unknown" ? "15" : Math.floor(setting))
             setting = Storage.getSetting("default_zoom_level")
-            defaultZoomLevel.set_value(setting == "Unknown"?"5" : Math.floor(setting))
+            defaultZoomLevel.set_value(setting == "Unknown" ? "5" : Math.floor(setting))
             setting = Storage.getSetting("search_button_disabled")
-            searchButtonSwitch.set_value(setting == "Unknown"?"false" : setting)
+            searchButtonSwitch.set_value(setting == "Unknown" ? "false" : setting)
         }
 
         function reset_all_defaults() {
@@ -131,6 +131,11 @@ Page {
                         Storage.setSetting("api", value)
                         appWindow.currentApi = value
                         appWindow.coverContents = text
+                        busSwitch.visible = regions.getRegion().busEnabled
+                        tramSwitch.visible = regions.getRegion().tramEnabled
+                        trainSwitch.visible = regions.getRegion().trainEnabled
+                        metroSwitch.visible = regions.getRegion().metroEnabled
+                        ferrySwitch.visible = regions.getRegion().ferryEnabled
                         appWindow.mainPage.refreshFavoriteRoutes()
                     }
 
@@ -151,7 +156,7 @@ Page {
             }
             TextSwitch {
                 id: busSwitch
-                visible: appWindow.currentApi === "helsinki"
+                visible: regions.getRegion().busEnabled
                 function updateDescription() {
                     if (busSwitch.checked)
                         busSwitch.description = qsTr("Route results will contain Buses")
@@ -173,7 +178,7 @@ Page {
             }
             TextSwitch {
                 id: ferrySwitch
-                visible: appWindow.currentApi === "helsinki"
+                visible: regions.getRegion().ferryEnabled
                 function updateDescription() {
                     if (ferrySwitch.checked)
                         ferrySwitch.description = qsTr("Route results will contain Ferry")
@@ -195,7 +200,7 @@ Page {
             }
             TextSwitch {
                 id: tramSwitch
-                visible: appWindow.currentApi === "helsinki"
+                visible: regions.getRegion().tramEnabled
                 function updateDescription() {
                     if (tramSwitch.checked)
                         tramSwitch.description = qsTr("Route results will contain Trams")
@@ -217,7 +222,7 @@ Page {
             }
             TextSwitch {
                 id: metroSwitch
-                visible: appWindow.currentApi === "helsinki"
+                visible: regions.getRegion().metroEnabled
                 function updateDescription() {
                     if (metroSwitch.checked)
                         metroSwitch.description = qsTr("Route results will contain Metro")
@@ -239,7 +244,7 @@ Page {
             }
             TextSwitch {
                 id: trainSwitch
-                visible: appWindow.currentApi === "helsinki"
+                visible: regions.getRegion().trainEnabled
                 function updateDescription() {
                     if (trainSwitch.checked)
                         trainSwitch.description = qsTr("Route results will contain Trains")

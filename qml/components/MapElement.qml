@@ -465,8 +465,6 @@ Item {
         flickable_map.start_point.coordinate.latitude =
                 appWindow.itinerariesModel.get(0).legs.get(0).from.latitude
 
-
-
         // Add all the routes and vehicles to the map, ResultMapPage shows content for all the 5 routes,
         // last 4 with thinner line
         if (multipleRoutes === true) {

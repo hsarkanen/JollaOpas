@@ -170,31 +170,26 @@ Page {
             parameters.arriveBy = true
             parameters.timetype = "arrival"
         }
-        parameters.walk_speed = walking_speed == "Unknown"?"70":walking_speed
-        parameters.change_margin = change_margin == "Unknown"?"3":Math.floor(change_margin)
-        parameters.change_reluctance = change_reluctance == "Unknown"?"10":Math.floor(change_reluctance)
-        parameters.walk_reluctance = walk_reluctance == "Unknown"?"2":Math.floor(walk_reluctance)
-        parameters.modes =""
+        parameters.walk_speed = walking_speed == "Unknown" ? "70" : walking_speed
+        parameters.change_margin = change_margin == "Unknown" ? "3" : Math.floor(change_margin)
+        parameters.change_reluctance = change_reluctance == "Unknown" ? "10" : Math.floor(change_reluctance)
+        parameters.walk_reluctance = walk_reluctance == "Unknown" ? "2" : Math.floor(walk_reluctance)
 
-        if (appWindow.currentApi === "helsinki") {
-            if(Storage.getSetting("bus_disabled") === "false") {
-                parameters.modes += "BUS,";
-            }
-            if(Storage.getSetting("tram_disabled") === "false") {
-                parameters.modes += "TRAM,";
-            }
-            if(Storage.getSetting("metro_disabled") === "false") {
-                parameters.modes += "SUBWAY,"
-            }
-            if(Storage.getSetting("train_disabled") === "false") {
-                parameters.modes += "RAIL,";
-            }
-            if(Storage.getSetting("ferry_disabled") === "false") {
-                parameters.modes += "FERRY,";
-            }
+        parameters.modes = ""
+        if (regions.getRegion().busEnabled == true && Storage.getSetting("bus_disabled") === "false") {
+            parameters.modes += "BUS,";
         }
-        else {
-            parameters.modes += "BUS,"
+        if (regions.getRegion().tramEnabled == true && Storage.getSetting("tram_disabled") === "false") {
+            parameters.modes += "TRAM,";
+        }
+        if (regions.getRegion().metroEnabled == true && Storage.getSetting("metro_disabled") === "false") {
+            parameters.modes += "SUBWAY,"
+        }
+        if (regions.getRegion().trainEnabled == true && Storage.getSetting("train_disabled") === "false") {
+            parameters.modes += "RAIL,";
+        }
+        if (regions.getRegion().ferryEnabled == true && Storage.getSetting("ferry_disabled") === "false") {
+            parameters.modes += "FERRY,";
         }
         parameters.modes += "WALK"
     }
@@ -241,10 +236,10 @@ Page {
                     var fromCoordToAdd = fromCoord ? fromCoord : currentCoord
                     var res = Favorites.addFavoriteRoute('normal', appWindow.currentApi, fromCoordToAdd, fromNameToAdd, toCoord, toName, favoriteRoutesModel)
                     if (res === "OK") {
-                        displayPopupMessage( qsTr("Favorite route added") )
+                        displayPopupMessage(qsTr("Favorite route added"))
                     }
                     else {
-                        displayPopupMessage( qsTr("Maximum amount of favorite routes is 4!") )
+                        displayPopupMessage(qsTr("Maximum amount of favorite routes is 4!"))
                     }
                 }
             }
@@ -337,7 +332,6 @@ Page {
 
         Spacing { id: favorites_spacing; anchors.top: content_column.bottom; height: 5 * Theme.pixelRatio }
 
-
         Item {
             id: headeritem
             width: parent.width
@@ -381,7 +375,6 @@ Page {
                         text: qsTr("Add to Cover")
                         onClicked: menu.currentItem.addToCover()
                     }
-
                     MenuItem {
                         text: qsTr("Remove")
                         onClicked: menu.currentItem.remove()

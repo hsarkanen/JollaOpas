@@ -138,8 +138,13 @@ LiveResult.prototype.parse_json = function(vehicles, parent) {
         for (monitoredVehicle in vehicles.Siri.ServiceDelivery.VehicleMonitoringDelivery[0].VehicleActivity) {
             vehicleData = vehicles.Siri.ServiceDelivery.VehicleMonitoringDelivery[0].VehicleActivity[monitoredVehicle]
             code = vehicleData.MonitoredVehicleJourney.LineRef.value
-            // Default to bus in Tampere for now
-            vehicleTypeAndCode = {"type": "bus", "code": code}
+            // The vehicle type isn't available in the API, so hard-code the tram lines.
+            if (code == "1" || code == "3") {
+                vehicleTypeAndCode = {"type": "tram", "code": code}
+            }
+            else {
+                vehicleTypeAndCode = {"type": "bus", "code": code}
+            }
             if (showVehicle(vehicleTypeAndCode, allowedVehicles)) {
                 parent.model.append({"modelLongitude" : vehicleData.MonitoredVehicleJourney.VehicleLocation.Longitude, "modelLatitude" : vehicleData.MonitoredVehicleJourney.VehicleLocation.Latitude, "modelCode" : code, "modelColor" : color, "modelBearing" : vehicleData.MonitoredVehicleJourney.Bearing})
             }

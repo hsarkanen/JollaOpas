@@ -111,25 +111,20 @@ CoverBackground {
             parameters.change_reluctance = change_reluctance == "Unknown"?"10":Math.floor(change_reluctance)
             parameters.walk_reluctance = walk_reluctance == "Unknown"?"2":Math.floor(walk_reluctance)
 
-            if (appWindow.currentApi === "helsinki") {
-                if(Storage.getSetting("bus_disabled") === "false") {
-                    parameters.modes += "BUS,";
-                }
-                if(Storage.getSetting("tram_disabled") === "false") {
-                    parameters.modes += "TRAM,";
-                }
-                if(Storage.getSetting("metro_disabled") === "false") {
-                    parameters.modes += "SUBWAY,"
-                }
-                if(Storage.getSetting("train_disabled") === "false") {
-                    parameters.modes += "RAIL,";
-                }
-                if(Storage.getSetting("ferry_disabled") === "false") {
-                    parameters.modes += "FERRY,";
-                }
+            if(regions.getRegion().busEnabled && Storage.getSetting("bus_disabled") === "false") {
+                parameters.modes += "BUS,";
             }
-            else {
-                parameters.modes += "BUS,"
+            if(regions.getRegion().tramEnabled && Storage.getSetting("tram_disabled") === "false") {
+                parameters.modes += "TRAM,";
+            }
+            if(regions.getRegion().metroEnabled && Storage.getSetting("metro_disabled") === "false") {
+                parameters.modes += "SUBWAY,"
+            }
+            if(regions.getRegion().trainEnabled && Storage.getSetting("train_disabled") === "false") {
+                parameters.modes += "RAIL,";
+            }
+            if(regions.getRegion().ferryEnabled && Storage.getSetting("ferry_disabled") === "false") {
+                parameters.modes += "FERRY,";
             }
             parameters.modes += "WALK"
 

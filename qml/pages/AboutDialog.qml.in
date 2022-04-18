@@ -64,7 +64,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
-                text: qsTr("Journey planner for Helsinki & Tampere area - fork of Jopas originally forked from Meegopas.")
+                text: qsTr("Journey planner for Finnish cities' public transport - fork of Jopas originally forked from Meegopas.")
             }
 
             Spacing {height: 10}
@@ -131,7 +131,7 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
-                text: "(c) Heikki Sarkanen" +"\n" + "<heikki.sarkanen@iki.fi>\n2014-2020\n" +
+                text: "(c) Heikki Sarkanen" +"\n" + "<heikki.sarkanen@iki.fi>\n2014-2022\n" +
                       qsTr("Original Author") + ":\nJukka Nousiainen\n" +
                       qsTr("Additional Credits") + ":\n" +
                       "Jani Mikkonen, " +

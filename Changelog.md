@@ -1,3 +1,10 @@
+## 0.9.3 (18th of April, 2022)
+
+Features:
+
+  - Add support for trams and local trains in Tampere
+  - Add support for selecting means of transport for all regions
+
 ## 0.9.2 (15th of June, 2020)
 
 Features:

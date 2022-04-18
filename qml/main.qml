@@ -49,11 +49,6 @@ ApplicationWindow {
             apiName: "hsl"
             boundarycirclelat: 60.169
             boundarycirclelon: 24.940
-            busEnabled: true
-            ferryEnabled: true
-            tramEnabled: true
-            metroEnabled: true
-            trainEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Tampere region (Nysse)")
@@ -61,9 +56,6 @@ ApplicationWindow {
             apiName: "finland"
             boundarycirclelat: 61.498
             boundarycirclelon: 23.759
-            busEnabled: true
-            tramEnabled: true
-            trainEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Turku region (Föli)")
@@ -71,7 +63,6 @@ ApplicationWindow {
             apiName: "finland"
             boundarycirclelat: 60.451
             boundarycirclelon: 22.267
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Hämeenlinna region")
@@ -79,7 +70,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 60.997
             boundarycirclelon: 24.465
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Iisalmi")
@@ -87,7 +77,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 63.557
             boundarycirclelon: 27.190
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Joensuu region (JOJO)")
@@ -95,7 +84,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 62.601
             boundarycirclelon: 29.762
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Jyväskylä region (Linkki)")
@@ -103,7 +91,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 62.243
             boundarycirclelon: 25.747
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Kajaani region")
@@ -111,7 +98,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 64.227
             boundarycirclelon: 27.729
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Kotka region")
@@ -119,7 +105,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 60.461
             boundarycirclelon: 26.939
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Kouvola")
@@ -127,7 +112,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 60.869
             boundarycirclelon: 26.700
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Kuopio region (Vilkku)")
@@ -135,7 +119,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 62.892
             boundarycirclelon: 27.678
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Lahti region (LSL)")
@@ -143,7 +126,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 60.984
             boundarycirclelon: 25.656
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Lappeenranta")
@@ -151,7 +133,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 61.056
             boundarycirclelon: 28.185
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Mikkeli")
@@ -159,7 +140,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 61.688
             boundarycirclelon: 27.274
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Oulu region")
@@ -167,7 +147,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 65.012
             boundarycirclelon: 25.471
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Rovaniemi (Linkkari)")
@@ -175,7 +154,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 66.500
             boundarycirclelon: 25.714
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Vaasa")
@@ -183,7 +161,6 @@ ApplicationWindow {
             apiName: "waltti"
             boundarycirclelat: 63.096
             boundarycirclelon: 21.616
-            busEnabled: true
         }
         ListElement {
             name: QT_TR_NOOP("Whole Finland")

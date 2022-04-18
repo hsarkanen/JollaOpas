@@ -131,11 +131,6 @@ Page {
                         Storage.setSetting("api", value)
                         appWindow.currentApi = value
                         appWindow.coverContents = text
-                        busSwitch.visible = regions.getRegion().busEnabled
-                        tramSwitch.visible = regions.getRegion().tramEnabled
-                        trainSwitch.visible = regions.getRegion().trainEnabled
-                        metroSwitch.visible = regions.getRegion().metroEnabled
-                        ferrySwitch.visible = regions.getRegion().ferryEnabled
                         appWindow.mainPage.refreshFavoriteRoutes()
                     }
 
@@ -156,7 +151,6 @@ Page {
             }
             TextSwitch {
                 id: busSwitch
-                visible: regions.getRegion().busEnabled
                 function updateDescription() {
                     if (busSwitch.checked)
                         busSwitch.description = qsTr("Route results will contain Buses")
@@ -178,7 +172,6 @@ Page {
             }
             TextSwitch {
                 id: ferrySwitch
-                visible: regions.getRegion().ferryEnabled
                 function updateDescription() {
                     if (ferrySwitch.checked)
                         ferrySwitch.description = qsTr("Route results will contain Ferry")
@@ -200,7 +193,6 @@ Page {
             }
             TextSwitch {
                 id: tramSwitch
-                visible: regions.getRegion().tramEnabled
                 function updateDescription() {
                     if (tramSwitch.checked)
                         tramSwitch.description = qsTr("Route results will contain Trams")
@@ -222,7 +214,6 @@ Page {
             }
             TextSwitch {
                 id: metroSwitch
-                visible: regions.getRegion().metroEnabled
                 function updateDescription() {
                     if (metroSwitch.checked)
                         metroSwitch.description = qsTr("Route results will contain Metro")
@@ -244,7 +235,6 @@ Page {
             }
             TextSwitch {
                 id: trainSwitch
-                visible: regions.getRegion().trainEnabled
                 function updateDescription() {
                     if (trainSwitch.checked)
                         trainSwitch.description = qsTr("Route results will contain Trains")

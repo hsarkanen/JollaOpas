@@ -34,6 +34,8 @@
 var API = {}
 API['digitransitgeocoding'] = {}
 API['digitransitgeocoding'].URL = 'https://api.digitransit.fi/'
+API['digitransitgeocoding'].APIKEYNAME = 'digitransit-subscription-key'
+API['digitransitgeocoding'].APIKEYVALUE = '<insert your api key from https://portal-api.digitransit.fi/profile here>'
 
 /****************************************************************************************************/
 /*                     address to location                                                          */
@@ -52,6 +54,7 @@ function get_geocode(term, model, region) {
     var url = API['digitransitgeocoding'].URL + queryType + '?' + query;
 //    console.debug(url);
     http_request.open("GET", url);
+    http_request.setRequestHeader(API['digitransitgeocoding'].APIKEYNAME, API['digitransitgeocoding'].APIKEYVALUE);
     http_request.onreadystatechange = function() {
         if (http_request.readyState === XMLHttpRequest.DONE) {
             var a = JSON.parse(http_request.responseText);
@@ -85,6 +88,7 @@ function get_reverse_geocode(latitude, longitude, model, api_type) {
 //    console.debug(API['digitransitgeocoding'].URL + queryType + '?' + query);
     var http_request = new XMLHttpRequest();
     http_request.open("GET", API['digitransitgeocoding'].URL + queryType + '?' + query);
+    http_request.setRequestHeader(API['digitransitgeocoding'].APIKEYNAME, API['digitransitgeocoding'].APIKEYVALUE);
     http_request.onreadystatechange = function() {
         if (http_request.readyState === XMLHttpRequest.DONE) {
             var a = JSON.parse(http_request.responseText);
@@ -146,6 +150,7 @@ function get_route(parameters, itineraries_model, itineraries_json, region) {
     http_request.open("POST", API['digitransitgeocoding'].URL + queryType);
     http_request.setRequestHeader("Content-Type", "application/graphql");
     http_request.setRequestHeader("Accept", "*/*")
+    http_request.setRequestHeader(API['digitransitgeocoding'].APIKEYNAME, API['digitransitgeocoding'].APIKEYVALUE);
     http_request.onreadystatechange = function() {
         if (http_request.readyState === XMLHttpRequest.DONE) {
             itineraries_json = JSON.parse(http_request.responseText);

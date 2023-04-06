@@ -1,3 +1,9 @@
+## 0.9.4 (6th of April, 2023)
+
+Bugfixes:
+
+  - Fix routing after Digitransit API key requirement
+
 ## 0.9.3 (18th of April, 2022)
 
 Features:

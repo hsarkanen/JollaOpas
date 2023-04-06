@@ -42,6 +42,9 @@ import "../components"
 Page {
     id: mainPage
 
+    property alias startPoint: from.textfield
+    property alias destinationPoint: to.textfield
+
     /* Current location acquired with GPS */
     property string currentCoord: ''
     property string currentName: ''

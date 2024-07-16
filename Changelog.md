@@ -1,3 +1,13 @@
+## 0.9.5 (16th of July, 2024)
+
+Features:
+
+  - Remove non-working obsolete exceptions page
+
+Bugfixes:
+
+  - Garbled list after changing location from recent searches - FIXED
+
 ## 0.9.4 (6th of April, 2023)
 
 Bugfixes:

@@ -65,7 +65,7 @@ Dialog {
     Spacing { id: headerTopSpacer; height: 50; anchors.bottom: recentsearchesheaderitem.top }
 
     Text {
-            anchors.verticalCenter: parent.verticalCenter
+            anchors.top: parent.verticalCenter
             anchors.left: parent.left
             anchors.leftMargin: Theme.paddingSmall
             id: recentsearchesheaderitem

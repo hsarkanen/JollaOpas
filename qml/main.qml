@@ -60,7 +60,7 @@ ApplicationWindow {
         ListElement {
             name: QT_TR_NOOP("Turku region (Föli)")
             identifier: "turku"
-            apiName: "finland"
+            apiName: "varely"
             boundarycirclelat: 60.451
             boundarycirclelon: 22.267
         }

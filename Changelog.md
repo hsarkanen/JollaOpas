@@ -1,3 +1,13 @@
+## 0.9.6 (30th of March, 2025)
+
+Features:
+
+  - Use different routing API for Turku region
+
+Bugfixes:
+
+  - Update to use Digitransit routing API v2, the old one will be deprated on 1.4.2025
+
 ## 0.9.5 (16th of July, 2024)
 
 Features:

@@ -177,21 +177,21 @@ Page {
 
         parameters.modes = ""
         if (Storage.getSetting("bus_disabled") === "false") {
-            parameters.modes += "BUS,";
+            parameters.modes += "{mode:BUS},";
         }
         if (Storage.getSetting("tram_disabled") === "false") {
-            parameters.modes += "TRAM,";
+            parameters.modes += "{mode:TRAM},";
         }
         if (Storage.getSetting("metro_disabled") === "false") {
-            parameters.modes += "SUBWAY,"
+            parameters.modes += "{mode:SUBWAY},"
         }
         if (Storage.getSetting("train_disabled") === "false") {
-            parameters.modes += "RAIL,";
+            parameters.modes += "{mode:RAIL},";
         }
         if (Storage.getSetting("ferry_disabled") === "false") {
-            parameters.modes += "FERRY,";
+            parameters.modes += "{mode:FERRY},";
         }
-        parameters.modes += "WALK"
+        parameters.modes += "{mode:WALK}"
     }
 
     Rectangle {

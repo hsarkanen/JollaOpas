@@ -115,7 +115,7 @@ function get_reverse_geocode(latitude, longitude, model, api_type) {
 function get_route(parameters, itineraries_model, itineraries_json, region) {
     itineraries_model.done = false;
     var size = 5;
-    var queryType = 'routing/v1/routers/' + region.apiName + '/index/graphql';
+    var queryType = 'routing/v2/' + region.apiName + '/gtfs/v1';
 
 //    console.debug(JSON.stringify(parameters));
     var graphqlFromLon = parameters.from.split(',', 2)[0]
@@ -141,7 +141,7 @@ function get_route(parameters, itineraries_model, itineraries_json, region) {
             + ',walkSpeed:' + graphqlWalkSpeed;
     // Show all results for the Finland region.
     if (region.identifier !== "finland") {
-        query = query + ',modes:"' + parameters.modes + '"';
+        query = query + ',transportModes:[' + parameters.modes + ']';
     }
     query = query + graphqlArriveBy + '){itineraries{walkDistance,duration,startTime,endTime,legs{mode route{shortName gtfsId} duration startTime endTime from{lat lon name stop{code name}},intermediateStops{lat lon code name},to{lat lon name stop{code name}},distance, legGeometry{points}}}}}';
 

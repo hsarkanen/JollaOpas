@@ -69,7 +69,7 @@ Map {
 
         PluginParameter {
             name: "app_code"
-            value: "SF5eaRhyqk8Z9hEx3piAxg"
+            value: "<insert your api key from https://platform.here.com/portal/ here>"
         }
     }
 

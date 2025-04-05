@@ -45,6 +45,7 @@ Column {
     property alias lineHeightMode : label.lineHeightMode
     property alias lineHeight : label.lineHeight
     property alias textfield : textfield.text
+    property alias suggestionAlias: suggestionTimer
 
     property string current_name : ''
     property string current_coord : ''

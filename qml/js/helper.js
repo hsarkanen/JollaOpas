@@ -73,14 +73,28 @@ function switch_locations(from, to) {
     var templo = from.destination_name
     var tempcoord = from.destination_coord
     var tempindex = from.selected_favorite
+    var checkAgain = false
+
+    // if the start point has not been selected
+    if (from.destination_name === "") {
+        templo = from.textfield
+        checkAgain = true
+    }
 
     from.clear()
-    from.updateLocation(to.destination_name, to.destination_coord)
+    if (to.destination_name === "") {
+        from.updateLocation(to.textfield, to.destination_coord)
+        from.suggestionAlias.restart()
+    } else
+        from.updateLocation(to.destination_name, to.destination_coord)
     from.selected_favorite = to.selected_favorite
 
     to.clear()
     to.updateLocation(templo, tempcoord)
     to.selected_favorite = tempindex
+    if (checkAgain)
+        to.suggestionAlias.restart()
+
 }
 
 function parse_disruption_time(time) {

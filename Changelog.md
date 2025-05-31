@@ -1,3 +1,9 @@
+## 0.9.7 (31st of May, 2025)
+
+Bugfixes:
+
+  - Fix API keys missing from build
+
 ## 0.9.6 (30th of March, 2025)
 
 Features:
